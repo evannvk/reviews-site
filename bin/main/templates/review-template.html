@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="${reviewModel.title}"></title>
+</head>
+<body>
+
+	<header>
+		<h1 th:text="${reviewModel.title}"></h1>
+	</header>
+
+	<main>
+			<h2 th:text="${reviewModel.title}"></h2>
+			<p th:text="${reviewModel.category}"></p>
+	</main>
+
+	<footer>
+		<p><a href="/reviews">back to reviews</a></p>
+		<small>Copyright Evan Novak 2020</small>
+	</footer>
+
+</body>
+</html>

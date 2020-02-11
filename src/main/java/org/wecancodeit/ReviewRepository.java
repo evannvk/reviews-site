@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 public class ReviewRepository {
 
 	private Map<Long, Review> reviewList = new HashMap<>();
-	private Review reviewOne = new Review(1L, "course one", "description");
-	private Review reviewTwo = new Review(2L, "course two", "description");
+	private Review reviewOne = new Review(1, "Review One", "category", "image url", "content");
+	private Review reviewTwo = new Review(2, "review two", "category", "image url", "content");
 
 	public ReviewRepository() {
 		reviewList.put(reviewOne.getId(), reviewOne);
@@ -19,9 +19,9 @@ public class ReviewRepository {
 	}
 
 	// uses varargs for testing purposes to take on the necessary courses
-	public ReviewRepository(Review... review) {
-		for (Review reviews: review) {
-			reviewList.put(reviews.getId(), reviews);
+	public ReviewRepository(Review... reviews) {
+		for (Review review: reviews) {
+			reviewList.put(review.getId(), review);
 		}
 	}
 

@@ -3,26 +3,38 @@ package org.wecancodeit;
 public class Review {
 	
 	private long id;
-	private String name;
-	private String description;
+	private String title;
+	private String category;
+	private String image;
+	private String content;
 
 
 	public long getId() {
 		return id;
 	}
 	
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 	
-	public String getDescription() {
-		return description;
+	public String getCategory() {
+		return category;
 	}
 	
-	public Review(long id, String name, String description) {
+	public String getImage() {
+		return image;
+	}
+	
+	public String getContent() {
+		return content;
+	}
+	
+	public Review(long id, String title, String category, String image, String content) {
 		this.id = id;
-		this.name = name;
-		this.description = description;
+		this.title = title;
+		this.category = category;
+		this.image = image;
+		this.content = content;
 		
 	}
 	

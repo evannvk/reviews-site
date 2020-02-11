@@ -17,20 +17,20 @@ public class ReveiwRepositoryTest {
 	@Resource
 	private ReviewRepository underTest;
 
-	private Review reviewOne = new Review(1L, "review name", "description");
-	private Review reviewTwo = new Review(2L, "review name", "description");
+	private Review reviewOne = new Review(1, "Boxing", "description", "image url", "content");
+	private Review reviewTwo = new Review(2, "review name", "description", "image url", "content");
 
 	@Test
 	public void shouldFindCourseOneById() {
 		underTest = new ReviewRepository(reviewOne);
-		Review foundReview = underTest.findOneReview(1L);
+		Review foundReview = underTest.findOneReview(1);
 		assertThat(foundReview, is(reviewOne));
 	}
 
 	@Test
 	public void shouldFindCourseTwoById() {
 		underTest = new ReviewRepository(reviewTwo);
-		Review foundReviews = underTest.findOneReview(2L);
+		Review foundReviews = underTest.findOneReview(2);
 		assertThat(foundReviews, is(reviewTwo));
 	}
 
