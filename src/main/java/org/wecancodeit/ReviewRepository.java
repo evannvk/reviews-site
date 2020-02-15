@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class ReviewRepository {
 
 	private Map<Long, Review> reviewList = new HashMap<>();
-	private Review reviewOne = new Review(1, "Eternal Sunshine of the Spotless Mind", "Movies", "/images/Eternal-Sunshine.jpg", 
+	private Review reviewOne = new Review(1, "Eternal Sunshine of the Spotless Mind", "Movies", "/images/Eternal-Sunshine.png", 
 			"Eternal sunshine of the spottless mind is one of my favortie movies. It takes the classic American Romance movies and turns it on its head by " +
 			"showing the fragility of memory and love. After Joel Barrish (Jim Carrey) and Clementine Kruczynski (Kate Winslet) find each other on a trip " +
 			"skipping work, a relationship starts to bud after a few nights spent together. Soon we discover this is not a new relationship, and the two had " +
