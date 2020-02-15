@@ -41,32 +41,32 @@ public class ReviewControllerMockMVCTest {
 	
 	@Test
 	public void shouldGetStatusOfOkWhenNavigationToAllReviews() throws Exception {
-		this.mockMvc.perform(get("/show-reviews")).andExpect(status().isOk()).andExpect(view().name("review-headpage"));
+		this.mockMvc.perform(get("/reviews")).andExpect(status().isOk()).andExpect(view().name("reviews-headpage"));
 	}
 	
 	@Test
 	public void shouldGetStatusOfOkWhenNavigatingToReviewOnePage() throws Exception {
-		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
-		this.mockMvc.perform(get("/show-single-review?id=1")).andExpect(status().isOk()).andExpect(view().name("review-template"));
+		when(reviewRepo.findOneReview(1)).thenReturn(reviewOne);
+		this.mockMvc.perform(get("/review?id=1")).andExpect(status().isOk()).andExpect(view().name("review-template.html"));
 	}
 	
 	@Test
 	public void shouldAddAllReviewsToTheModel() throws Exception {
 		when(reviewRepo.findAllReviews()).thenReturn(Arrays.asList(reviewOne, reviewTwo));
-		this.mockMvc.perform(get("/show-review")).andExpect(model().attribute("reviewModel", hasSize(2)));
+		this.mockMvc.perform(get("/reviews")).andExpect(model().attribute("reviewsModel", hasSize(2)));
 	}
 	
 	@Test
 	public void shouldAddSingleReviewToTheModel() throws Exception {
-		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
-		this.mockMvc.perform(get("/show-single-review?id=1")).andExpect(model().attribute("reviewModel", is(reviewOne)));
+		when(reviewRepo.findOneReview(1)).thenReturn(reviewOne);
+		this.mockMvc.perform(get("/review?id=1")).andExpect(model().attribute("reviewModel", is(reviewOne)));
 	}
 	
 	@Test
 	public void shouldReturnNotFoundForBadRequest() throws Exception {
-		Long badId = 5L;
+		Long badId = (long) 5;
 		when(reviewRepo.findOneReview(badId)).thenReturn(null);
-		this.mockMvc.perform(get("/show-single-review?id=5")).andExpect(status().isNotFound());
+		this.mockMvc.perform(get("/review?id=5")).andExpect(status().isNotFound());
 	}
 
 }

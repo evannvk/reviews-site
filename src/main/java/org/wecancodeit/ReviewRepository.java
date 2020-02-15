@@ -17,7 +17,7 @@ public class ReviewRepository {
 			"broken up recently and Clementine had her memory erased, eager to move on with her life. Upon discovering this, Joel decides to have his memory erased " +
 			"as well. But as the procedure is being performed, the memories of fondness and tender love give him second thoughts and begins to fight the operation." +
 			"We then follow Joel in his desperate quest to prevent the procedure.");
-	private Review reviewTwo = new Review(2, "Maus", "Comics", "/images/maus.jpg", 
+	private Review reviewTwo = new Review(2, "Maus", "Comics", "/images/maus.jpeg", 
 			"Maus, a two-part graphic novel written and drawn by Art Spiegelman, depicts his father's tale as a Jewish man during the holocaust. The graphic novel " +
 			"depitcs the horrifying historical event with cats and mice. Yes, the Jewish people are depicted as mice and the nazis as cats. As interesting as the " +
 			"holocaust is, the story is just as much about that as it is the realationship with Art and his father, Vladek. It reads as a memoir of Art's interviews" +
