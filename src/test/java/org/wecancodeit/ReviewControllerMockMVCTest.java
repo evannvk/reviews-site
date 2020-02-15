@@ -40,24 +40,24 @@ public class ReviewControllerMockMVCTest {
 	private ReviewRepository reviewRepo;
 	
 	@Test
-	public void shouldGetStatusOfOkWhenNavigationToAllCourses() throws Exception {
+	public void shouldGetStatusOfOkWhenNavigationToAllReviews() throws Exception {
 		this.mockMvc.perform(get("/show-reviews")).andExpect(status().isOk()).andExpect(view().name("review-headpage"));
 	}
 	
 	@Test
-	public void shouldGetStatusOfOkWhenNavigatingToCourseOnePage() throws Exception {
+	public void shouldGetStatusOfOkWhenNavigatingToReviewOnePage() throws Exception {
 		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
 		this.mockMvc.perform(get("/show-single-review?id=1")).andExpect(status().isOk()).andExpect(view().name("review-template"));
 	}
 	
 	@Test
-	public void shouldAddAllCoursesToTheModel() throws Exception {
+	public void shouldAddAllReviewsToTheModel() throws Exception {
 		when(reviewRepo.findAllReviews()).thenReturn(Arrays.asList(reviewOne, reviewTwo));
 		this.mockMvc.perform(get("/show-review")).andExpect(model().attribute("reviewModel", hasSize(2)));
 	}
 	
 	@Test
-	public void shouldAddSingleCourseToTheModel() throws Exception {
+	public void shouldAddSingleReviewToTheModel() throws Exception {
 		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
 		this.mockMvc.perform(get("/show-single-review?id=1")).andExpect(model().attribute("reviewModel", is(reviewOne)));
 	}

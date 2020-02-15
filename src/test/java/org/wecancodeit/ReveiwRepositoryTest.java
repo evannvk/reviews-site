@@ -21,21 +21,21 @@ public class ReveiwRepositoryTest {
 	private Review reviewTwo = new Review(2, "review name", "description", "image url", "content");
 
 	@Test
-	public void shouldFindCourseOneById() {
+	public void shouldFindReviewOneById() {
 		underTest = new ReviewRepository(reviewOne);
 		Review foundReview = underTest.findOneReview(1);
 		assertThat(foundReview, is(reviewOne));
 	}
 
 	@Test
-	public void shouldFindCourseTwoById() {
+	public void shouldFindReviewTwoById() {
 		underTest = new ReviewRepository(reviewTwo);
 		Review foundReviews = underTest.findOneReview(2);
 		assertThat(foundReviews, is(reviewTwo));
 	}
 
 	@Test
-	public void shouldFindAllCourses() {
+	public void shouldFindAllReviews() {
 		underTest = new ReviewRepository(reviewOne, reviewTwo);
 		Collection<Review> foundReviews = underTest.findAllReviews();
 		assertThat(foundReviews, containsInAnyOrder(reviewOne, reviewTwo));
